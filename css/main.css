@@ -1,0 +1,39 @@
+.bg{
+  background:url(../img/light_grey.png) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover
+}
+
+
+.well{
+  color: #333;
+}
+body{
+  box-shadow: none;
+  color: #333332;
+  text-shadow: none;
+  font-family: "myriad-pro",sans-serif;
+  
+}
+.post{
+
+  opacity: 0.7;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  background-clip: padding-box;
+
+  -webkit-box-shadow: 4px 5px 9px -2px #fff;
+  box-shadow: 4px 5px 9px -2px #fff;
+  
+  /*background-color: #cfd1d1;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#cfd1d1), to(#ffffff));
+  background-image: -webkit-linear-gradient(top, #cfd1d1, #ffffff);
+  background-image:    -moz-linear-gradient(top, #cfd1d1, #ffffff);
+  background-image:      -o-linear-gradient(top, #cfd1d1, #ffffff);
+  background-image:         linear-gradient(to bottom, #cfd1d1, #ffffff);
+
+  color: #000;*/
+
+}
