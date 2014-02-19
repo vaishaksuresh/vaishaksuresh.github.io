@@ -43,46 +43,50 @@
                   </ul>
                 </div>
               </div>
-              
-              <div class="container-fluid ">
+
+
+
+              <!--<div class="container-fluid ">
+                {% for post in paginator.posts %}
                 <article>
                   <div class="row post">
                     <div class=" col-md-12">
-                      <h1>{{page.title}}</h1>
-                      <h3><small>Meta goes here</small></h3>
+                      <h1>{{post.title}}</h1>
+                      <h3><small>{{post.date | date: "%c"}} {{post.url}}</small></h3>
                     </div>
                     <div class=" col-md-12 pull-right text-left">
-                      {{content}}
+                      {{post.content}}
                     </div>
                   </div>
                 </article>
-                <article>
-                  <div class="row post">
-                    <div class=" col-md-12">
-                      <h1>{{page.title}}</h1>
-                      <h3><small>Meta goes here</small></h3>
-                    </div>
-                    <div class=" col-md-12 pull-right text-left">
-                      {{content}}
-                    </div>
-                  </div>
-                </article>
-                <article>
-                  <div class="row post">
-                    <div class=" col-md-12">
-                      <h1>{{page.title}}</h1>
-                      <h3><small>Meta goes here</small></h3>
-                    </div>
-                    <div class=" col-md-12 pull-right text-left">
-                      {{content}}
-                    </div>
-                  </div>
-                </article>
+                {% endfor %}
+
                 <div class="row top-padding">
+
+                  <h3>
+                    {% if paginator.previous_page %}
+                    {% if paginator.previous_page != 1 %}
+                    <a href="/page{{paginator.previous_page}}" class="previous">Previous </a>
+                    {% else %}
+                    <a href="/" class="previous">Previous </a>
+                    {% endif %}
+                    {% else %}
+
+                    {% endif %}
+                    <span class="page_number ">{{paginator.page}} of {{paginator.total_pages}}</span>
+                    {% if paginator.next_page %}
+                    <a href="/page{{paginator.next_page}}" class="next ">Next</a>
+                    {% else %}
+
+                    {% endif %}
+                  </h3>
+
                   <button class="btn btn-primary btn-xs" type="submit">Previous</button>
                   <button class="btn btn-primary btn-xs" type="submit">Next</button>
+
                 </div>
-              </div>
+              </div>-->
+              {{content}}
 
             </div>
 

@@ -7,17 +7,20 @@
 <meta name="description" content="">
 <meta name="author" content="">
 <link rel="shortcut icon" href="http://getbootstrap.com/assets/ico/favicon.ico">
-<title>{{page.title}}</title>
+<title>This is a blog post</title>
 
 <!-- Bootstrap core CSS -->
 <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
 <!-- Custom styles for this template -->
-<link href="http://getbootstrap.com/examples/cover/cover.css" rel="stylesheet">
+<link href="/css/cover.css" rel="stylesheet">
 <!-- syntax highlighting CSS -->
 <link rel="stylesheet" href="/css/syntax.css">
 
 <!-- Custom CSS -->
 <link rel="stylesheet" href="/css/main.css">
+
+<script type="text/javascript" src="//use.typekit.net/wbp5zpo.js"></script>
+<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 
 
 <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -27,31 +30,49 @@
       <![endif]-->
       <style type="text/css"></style><style id="holderjs-style" type="text/css"></style></head>
 
-      <body class='{{ page.class }}'>
+      <body class=''>
         <div class="site-wrapper">
           <div class="site-wrapper-inner">
-            <div class="cover-container">
-                <div class="clearfix">
-                    <div class="inner">
-                      <h3 class="masthead-brand">{{site.name}}</h3>
-                      <ul class="nav masthead-nav">
-                        <li class="active"><a href="#">Home</a></li>
-                        <li><a href="blog.html">Blog</a></li>
+            <div class="container">
+            <div class="row">
+                <div class="masthead clearfix">
+                  <div class="inner">
+                    <h3 class="masthead-brand">Valhalla</h3>
+                    <ul class="nav masthead-nav">
+                      <li class="active"><a href="#">Home</a></li>
+                      <li><a href="/blog">Blog</a></li>
                     </ul>
+                  </div>
                 </div>
-            </div>
-            {{content}}
-            <div>
-                <div class="inner">
-                  <p>Cover template for <a href="http://getbootstrap.com/">Bootstrap</a>, by <a href="https://twitter.com/mdo">@mdo</a>.</p>
               </div>
-          </div>
+              <div class="container-fluid ">
 
-      </div>
 
-  </div>
+<div class="row top-padding">
+
+  <h3>
+      
+      <!--<span class="previous">Previous</span>-->
+      
+      <span class="page_number "> of </span>
+      
+      <!--<span class="next ">Next</span>-->
+      
+</h3>
+
+<button class="btn btn-primary btn-xs" type="submit">Previous</button>
+<button class="btn btn-primary btn-xs" type="submit">Next</button>
 
 </div>
+</div>
+
+
+
+            </div>
+
+          </div>
+
+        </div>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
@@ -61,4 +82,4 @@
     <script src="/js/docs.min.js"></script>
 
 
-</body></html>
+  </body></html>
