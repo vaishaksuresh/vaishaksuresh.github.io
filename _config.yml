@@ -3,3 +3,4 @@ markdown: redcarpet
 pygments: true
 paginate: 2
 paginate_path: "blog/page:num"
+permalink: pretty

@@ -9,32 +9,37 @@ class:
     <div class="row post">
       <div class=" col-md-12">
         <h1>{{post.title}}</h1>
-        <h3><small>{{post.date | date: "%c"}} - {{post.categories}}</small></h3>
+        <h3><small>{{post.date | date: "%c"}}</small></h3>
       </div>
       <div class=" col-md-12 pull-right text-left">
         {{post.content}}
       </div>
+      <div class="pull-right">
+        <a href="{{ post.url }}" title="permalink" class="btn btn-default btn-xs">
+          <span class="glyphicon glyphicon-link"></span></a>
+          <span class="glyphicon glyphicon-tags" title="{{ post.categories | join: ',' }}"> </span>
+        </div>
+      </div>
+    </article>
+    {% endfor %}
+    <div class="row top-padding">
+      <h3>
+        {% if paginator.previous_page %}
+        {% if paginator.previous_page != 1 %}
+        <a href="/blog/page{{paginator.previous_page}}" class="btn btn-primary btn-xs">Previous </a>
+        {% else %}
+        <a href="/blog/" class="btn btn-primary btn-xs">Previous </a>
+        {% endif %}
+        {% else %}
+        <!--<span class="previous">Previous</span>-->
+        {% endif %}
+        {% if paginator.next_page %}
+        <a href="/blog/page{{paginator.next_page}}" class="btn btn-primary btn-xs">Next</a>
+        {% else %}
+        <!--<span class="next ">Next</span>-->
+        {% endif %}
+      </h3>
     </div>
-  </article>
-  {% endfor %}
-  <div class="row top-padding">
-    <h3>
-      {% if paginator.previous_page %}
-      {% if paginator.previous_page != 1 %}
-      <a href="/blog/page{{paginator.previous_page}}" class="btn btn-primary btn-xs">Previous </a>
-      {% else %}
-      <a href="/blog/" class="btn btn-primary btn-xs">Previous </a>
-      {% endif %}
-      {% else %}
-      <!--<span class="previous">Previous</span>-->
-      {% endif %}
-      {% if paginator.next_page %}
-      <a href="/blog/page{{paginator.next_page}}" class="btn btn-primary btn-xs">Next</a>
-      {% else %}
-      <!--<span class="next ">Next</span>-->
-      {% endif %}
-    </h3>
   </div>
-</div>
 
 
