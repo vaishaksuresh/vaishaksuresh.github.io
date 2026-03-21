@@ -1,19 +1,144 @@
----
-layout: base
-title: Valhalla
-class: bg
----
-<div class="container-fluid">
-	<div class="row post">
-		<div class="col-md-2 col-sm-3 col-xs-12">
-			<img src="https://lh4.googleusercontent.com/-ZCM4IlwNYys/Tg3myq_s4CI/AAAAAAAAGqc/7aJSIHBATzs/w619-h616-no/DSC_0383.JPG" 
-			alt="placeholder" class="img-circle img-responsive img-transparent">
-		</div>
-		<div class="lead col-md-10 col-sm-9 col-xs-12 text-justify"><p>
-			<h2><abbr>Namaskara!</abbr></h2>
-			You've reached the homepage of Vaishak Suresh.
-			I am a graduate student at San Jose State University. 
-			I <a href="http://github.com/vaishaksuresh">code</a>, <a href="http://twitter.com/vaishaksuresh">tweet</a>, <a href="http://flickr.com/photos/vaishaksuresh">click pictures</a> and some times ask/answer questions <a href="http://stackoverflow.com/users/241821/vaishak-suresh">here</a>, <a href="http://www.quora.com/Vaishak-Suresh">here</a> and <a href="http://www.reddit.com">here.</a></p>
-		</div>
-	</div>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vaishak Suresh</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+        
+        .container {
+            max-width: 600px;
+            text-align: center;
+            color: white;
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 300;
+            letter-spacing: -1px;
+            margin-bottom: 2rem;
+            font-family: 'Georgia', serif;
+        }
+        
+        .quote-container {
+            min-height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 3rem 0;
+            font-size: 1.3rem;
+            font-weight: 300;
+            line-height: 1.8;
+            font-style: italic;
+            opacity: 0.95;
+        }
+        
+        .quote {
+            display: inline;
+        }
+        
+        .cursor {
+            display: inline-block;
+            width: 2px;
+            height: 1.2em;
+            background: white;
+            margin-left: 4px;
+            animation: blink 1s infinite;
+        }
+        
+        @keyframes blink {
+            0%, 49% { opacity: 1; }
+            50%, 100% { opacity: 0; }
+        }
+        
+        .links {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            margin-top: 3rem;
+            font-size: 1.1rem;
+        }
+        
+        a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.85;
+            transition: opacity 0.3s ease;
+            border-bottom: 2px solid transparent;
+            padding-bottom: 2px;
+        }
+        
+        a:hover {
+            opacity: 1;
+            border-bottom-color: rgba(255, 255, 255, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Vaishak Suresh</h1>
+        
+        <div class="quote-container">
+            <span class="quote" id="quote"></span><span class="cursor"></span>
+        </div>
+        
+        <div class="links">
+            <a href="https://linkedin.com/in/vaishaksuresh" target="_blank">LinkedIn</a>
+            <a href="https://github.com/vaishaksuresh" target="_blank">GitHub</a>
+            <a href="https://instagram.com/vaishaksuresh" target="_blank">Instagram</a>
+        </div>
+    </div>
+    
+    <script>
+        // Quotes will be fetched from quotes.md
+        const quotes = [
+            "The best way to predict the future is to invent it.",
+            "Software is a tool for thought; infrastructure is the foundation.",
+            "Simplicity is the ultimate sophistication.",
+            "Build systems, not just software.",
+            "Constraints drive creativity."
+        ];
+        
+        function getRandomQuote() {
+            return quotes[Math.floor(Math.random() * quotes.length)];
+        }
+        
+        function typewriterEffect(element, text, speed = 50) {
+            let index = 0;
+            element.textContent = '';
+            
+            function type() {
+                if (index < text.length) {
+                    element.textContent += text.charAt(index);
+                    index++;
+                    setTimeout(type, speed);
+                }
+            }
+            
+            type();
+        }
+        
+        // On page load, pick a random quote and animate it
+        window.addEventListener('DOMContentLoaded', () => {
+            const quote = getRandomQuote();
+            const quoteElement = document.getElementById('quote');
+            typewriterEffect(quoteElement, quote, 40);
+        });
+    </script>
+</body>
+</html>
